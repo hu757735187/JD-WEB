@@ -3,10 +3,10 @@ import Router from "vue-router";
 import Login from "../views/login";
 import Home from "../views/Home";
 import Error from "../views/error";
-import Shop from "../views/pages/shop";
 import UpdatePage from "../views/updatePage"
 import CommodityClassification from "../views/CommodityClassification";
 import AddToCart from "../views/AddToCart";
+import ShoppingCart from "../views/pages/ShoppingCart";
 Vue.use(Router);
 
 export default new Router({
@@ -23,13 +23,6 @@ export default new Router({
     {
       path: "/home",
       component: Home,
-      children:[
-
-        {
-          path: "/shop",
-          component: Shop
-        },
-      ]
     },
     {
       path:"/updatePage",
@@ -46,8 +39,15 @@ export default new Router({
           component:AddToCart
       },
     {
+       /*购物车*/
+      path:'/sc',
+      component:ShoppingCart
+
+    },
+    {
       path: "**",
       component: Error
     },
+
   ]
 });
