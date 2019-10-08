@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-
-      <router-link to="/inHome">首页</router-link>
-      <router-link to="/cc">商品分类</router-link>
+     <header_head></header_head>
       <router-view></router-view>
   </div>
 </template>
 
 <script>
+    import header_head from "../components/common/header_head";
 export default {
   name: "home",
+    components: {
+      header_head
+    },
 };
 </script>
 
