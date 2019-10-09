@@ -1,31 +1,8 @@
 <template>
   <div class="home">
 
-    <div class="top_find">
 
-        <div class="top_find_son">
-            <img src="@/assets/img/home/top_find_logo.png" alt="">
-            <div class="input_find">
-                <input type="text" placeholder="卸妆水" />
-                <span style="background: url(../assets/img/home/img_12.png) 0 -1px;"></span>
-         <!--       <a href="#"><img src="@/assets/img/home/img_09.png" /></a>-->
-            </div>
-        </div>
-    </div>
-    <ul class="left_floor">
-        <li class="left_floor_xiang">享品质</li>
-        <li class="left_floor_fu">服饰美妆</li>
-        <li class="left_floor_jia">家电手机</li>
-        <li class="left_floor_dian">电脑数码</li>
-        <li class="left_floor_3C">3C运动</li>
-        <li class="left_floor_ai">爱吃</li>
-        <li class="left_floor_mu">母婴家居</li>
-        <li class="left_floor_tu">图书汽车</li>
-        <li class="left_floor_you">游戏金融</li>
-        <li class="left_floor_lv">旅行健康</li>
-        <li class="left_floor_hai">还没逛够</li>
-        <li class="left_floor_ding">顶部</li>
-    </ul>
+
       <header>
 
           <!--头部-->
@@ -36,7 +13,7 @@
                   <input type="text" placeholder="卸妆水" />
                   <span style="background: url(../assets/img/home/img_12.png) 0 -1px;"></span>
                   <!--<button><i class="glyphicon"></i></button>-->
-                  <a href="#"><img src="img/img_09.png" /></a>
+                  <a href="#"><img src="@/assets/img/home/img_09.png" /></a>
               </div>
               <div class="header_ico">
                   <div class="header_gw">
@@ -688,7 +665,12 @@ export default {
     components: {
         header_head
     },
-};
+    methods: {
+        test(){
+            console.log('hhhhh');
+        }
+    }
+}
 </script>
 
 <style  scoped>
