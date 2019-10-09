@@ -1,17 +1,17 @@
 <template>
       <div class="cc-boc">
+       <header_head></header_head>
           商品分类
-          <router-link to="/atc">加入购物车</router-link>
       </div>
 </template>
 
 <script>
-    import AddToCart from "./AddToCart";
+  import header_head from "../components/common/header_head";
     export default {
         name: "CommodityClassification",
-        comments:{
-            AddToCart
-        }
+        components: {
+            header_head
+        },
     }
 </script>
 

@@ -21,16 +21,6 @@ import Nav from 'components/common/Nav'
   }
 </script>
 <style lang="stylus" scoped>
-    #app
-        position absolute
-        width 100%
-        height 100%
-        top 0
-        left 0
-        .container
-            width 100%
-            height 100%
-            .row1
-                width 100%
-                height 100%
+  @import "assets/css/normalize.css"
+
 </style>
