@@ -665,7 +665,12 @@ export default {
     components: {
         header_head
     },
-};
+    methods: {
+        test(){
+            console.log('hhhhh');
+        }
+    }
+}
 </script>
 
 <style  scoped>

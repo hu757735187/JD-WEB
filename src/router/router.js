@@ -7,6 +7,7 @@ import UpdatePage from "../views/updatePage"
 import CommodityClassification from "../views/CommodityClassification";
 import AddToCart from "../views/AddToCart";
 import ShoppingCart from "../views/pages/ShoppingCart";
+import SettlementPage from "../views/SettlementPage";
 Vue.use(Router);
 
 export default new Router({
@@ -43,6 +44,11 @@ export default new Router({
       path:'/sc',
       component:ShoppingCart
 
+    },
+    {
+      /*结算页*/
+      path:'/sp',
+      component: SettlementPage
     },
     {
       path: "**",
