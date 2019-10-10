@@ -3176,7 +3176,7 @@
         line-height: 1;
     }
     @media all and (transform-3d), (-webkit-transform-3d) {
-        .
+
     }
     .carousel-indicators li {
         display: inline-block;

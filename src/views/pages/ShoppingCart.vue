@@ -53,13 +53,23 @@
                             <li>操作</li>
                         </ul>
                     </div>
-                    <div class="one_shopbottom">
-                        <div>
-                            <span><input type="checkbox"  class="allCheck"></span>
-                            <span>京东自营</span>
+                    <div class="one_shop">
+                        <div class="one_shopbottom">
+                            <div class="one_shopbottom_a">
+                                <span><input type="checkbox"  class="allCheck"></span>
+                                <div class="one_shopbottom_b">
+                                    <span>京东自营</span>
+                                </div>
+                            </div>
+    <!--                        <div class="one_shopbottom_div">-->
+    <!--                            <img src="@/assets/img/shoppingcart/i.png" alt="">-->
+    <!--                            <span>已免运费</span>-->
+    <!--                        </div>-->
                         </div>
-<!--                        <div><img src="@assets/img/shoppingcart/i.png" alt=""></div>-->
-                        <div><span>以免运费</span></div>
+                        <div class="one_shopcon">
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -73,6 +83,11 @@
     import header_head1 from "../../components/common/header_head1";
     export default {
         name: "ShoppingCart",
+        // data(){
+        //     return {
+        //         mms:"京东自营"
+        //     }
+        // },
         components: {
             header_head1
         },
@@ -197,6 +212,9 @@
             clear left
             line-height 15px
             color #666666
+            .one_shoptop_ul
+                position:absolute
+                left 145px
             .one_shoptop_ul li
                 float left
                 font-size small
@@ -205,23 +223,45 @@
             .one_shoptop_ul li:nth-child(2)
                 margin-left 85px
             .one_shoptop_ul li:nth-child(3)
-                margin-left 420px
+                margin-left 440px
             .one_shoptop_ul li:nth-child(4)
-                margin-left 70px
+                margin-left 90px
             .one_shoptop_ul li:nth-child(5)
-                margin-left 50px
-            .one_shoptop_ul li:last-child
                 margin-left 70px
+            .one_shoptop_ul li:last-child
+                margin-left 90px
+    .one_shop
+         position relative
+         width 1000px
+         height 350px
+         border 1px solid red
         .one_shopbottom
             border-bottom 2px solid #aaaaaa
-            height 60px
+            height 45px
             font-size small
             color #555555
-        .one_shopbottom>div
+        /*.one_shopbottom_div*/
+        /*    position:relative*/
+        /*    float left*/
+        /*    left  540px*/
+        .one_shopbottom_a
+            position relative
+            top 24px
+            left 8px
             float left
-            margin-top 30px
-            width 333px
-            height 30px
-            line-height 30px
-            margin-left 40px
+            width 80px
+            height 20px
+            .one_shopbottom_b
+                float right
+                padding 0 3px
+                color white
+                border-radius 3px
+                background #E4393B
+        .one_shopcon
+            width 1000px
+            height 250px
+            border 1px solid green
+
+
+
 </style>
