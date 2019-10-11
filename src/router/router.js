@@ -8,6 +8,7 @@ import CommodityClassification from "../views/CommodityClassification";
 import AddToCart from "../views/AddToCart";
 import ShoppingCart from "../views/pages/ShoppingCart";
 import SettlementPage from "../views/SettlementPage";
+import cc_nav from "../components/common/cc_nav";
 Vue.use(Router);
 
 export default new Router({
@@ -49,6 +50,10 @@ export default new Router({
       /*结算页*/
       path:'/sp',
       component: SettlementPage
+    },
+    {
+      path:'/cc_nav',
+      component: cc_nav
     },
     {
       path: "**",
