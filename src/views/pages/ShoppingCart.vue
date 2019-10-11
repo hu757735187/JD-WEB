@@ -42,7 +42,7 @@
                     </div>
 
 
-
+                 <div class="one_shop">
                     <div class="one_shoptop">
                         <ul class="one_shoptop_ul">
                             <li><input type="checkbox" class="allcheck">全选</li>
@@ -53,10 +53,10 @@
                             <li>操作</li>
                         </ul>
                     </div>
-                    <div class="one_shop">
+
                         <div class="one_shopbottom">
                             <div class="one_shopbottom_a">
-                                <span><input type="checkbox"  class="allCheck"></span>
+                                <span><input type="checkbox"  class="allcheck"></span>
                                 <div class="one_shopbottom_b">
                                     <span>京东自营</span>
                                 </div>
@@ -67,10 +67,46 @@
     <!--                        </div>-->
                         </div>
                         <div class="one_shopcon">
-
-
+                            <div class="one_shopcon_a">
+                                <span><input type="checkbox" class="allcheck"></span>
+                            </div>
+                            <div class="one_shopcon_b">
+                                <div class="one_shopcon_tp">
+                                    <a href=""><img src="@/assets/img/shoppingcart/shop1.jpg"></a>
+                                </div>
+                                <div class="one_shopcon_xh">
+                                    <span class="one_shopcon_xh_s1">Apple iPhone 11(A2223)256GB 黄色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="one_shopcon_ys" title="黄色">
+                                    黄色
+                                </div>
+                                <div class="one_shopcon_nc" title="256GB">
+                                    256GB
+                                </div>
+                                <div class="one_shopcon_jg">
+                                    ¥6799.00
+                                </div>
+                                <div class="one_shopcon_js">
+                                    <div class="box">
+                                        <ul id="car">
+                                            <li><button v-on:click="subtract()">-</button></li>
+                                            <li><input type="text" value="0" size="1" v-model="count"></li>
+                                            <li><button v-on:click="add()">+</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="one_shopcon_xj">
+                                    ¥6799.00
+                                </div>
+                                <div class="one_shopcon_remove" >
+                                    <span>删除</span>
+                                </div>
+                                <div class="one_shopcon_follow">
+                                    移动到我的关注
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                  </div>
 
                 </div>
              </div>
@@ -199,69 +235,159 @@
         top 240px
         width 100%
         height 500px
-        border 1px solid red
+
         .onebdy_box
             width 1000px
             height 100%
             margin 0 auto
             border 1px solid pink
-        .one_shoptop
-            height 42px
-            background #f3f3f3
-            border 1px solid #e9e9e9
-            clear left
-            line-height 15px
-            color #666666
-            .one_shoptop_ul
-                position:absolute
-                left 145px
-            .one_shoptop_ul li
-                float left
-                font-size small
-            .one_shoptop_ul li:first-child
-                padding 0px
-            .one_shoptop_ul li:nth-child(2)
-                margin-left 85px
-            .one_shoptop_ul li:nth-child(3)
-                margin-left 440px
-            .one_shoptop_ul li:nth-child(4)
-                margin-left 90px
-            .one_shoptop_ul li:nth-child(5)
-                margin-left 70px
-            .one_shoptop_ul li:last-child
-                margin-left 90px
-    .one_shop
-         position relative
-         width 1000px
-         height 350px
-         border 1px solid red
-        .one_shopbottom
-            border-bottom 2px solid #aaaaaa
-            height 45px
-            font-size small
-            color #555555
-        /*.one_shopbottom_div*/
-        /*    position:relative*/
-        /*    float left*/
-        /*    left  540px*/
-        .one_shopbottom_a
-            position relative
-            top 24px
-            left 8px
-            float left
-            width 80px
-            height 20px
-            .one_shopbottom_b
-                float right
-                padding 0 3px
-                color white
-                border-radius 3px
-                background #E4393B
-        .one_shopcon
-            width 1000px
-            height 250px
-            border 1px solid green
+            .one_shop
+                 position relative
+                 width 1000px
+                 height 269px
+                 border 1px solid red
+                .one_shoptop
+                    height 42px
+                    background #f3f3f3
+                    border 1px solid #e9e9e9
+                    clear left
+                    line-height 15px
+                    color #666666
+                    .one_shoptop_ul
+                        position:absolute
+                        left -32px
+                    .one_shoptop_ul li
+                        float left
+                        font-size small
+                    .one_shoptop_ul li:first-child
+                        padding 0px
+                    .one_shoptop_ul li:nth-child(2)
+                        margin-left 85px
+                    .one_shoptop_ul li:nth-child(3)
+                        margin-left 440px
+                    .one_shoptop_ul li:nth-child(4)
+                        margin-left 90px
+                    .one_shoptop_ul li:nth-child(5)
+                        margin-left 70px
+                    .one_shoptop_ul li:last-child
+                        margin-left 90px
+
+                .one_shopbottom
+                    border-bottom 2px solid #aaaaaa
+                    height 45px
+                    font-size small
+                    color #555555
+                /*.one_shopbottom_div*/
+                /*    position:relative*/
+                /*    float left*/
+                /*    left  540px*/
+                .one_shopbottom_a
+                    position relative
+                    top 24px
+                    left 8px
+                    float left
+                    width 80px
+                    height 20px
+                    .one_shopbottom_b
+                        float right
+                        padding 0 3px
+                        color white
+                        border-radius 3px
+                        background #E4393B
+                .one_shopcon
+                    width 990px
+                    height 141px
+                    border 1px solid green
+                    .one_shopcon_a
+                        position relative
+                        top 10px
+                        left 7px
+                    .one_shopcon_b
+                        position relative
+                        left 40px
+                        top -10px
+                        width 948px
+                        height 107px
+                        border 1px solid gold
+                        font-size 13px
+                        .one_shopcon_tp
+                            width 80px
+                            height 80px
+                            border 1px solid #EEEEEE
+                        .one_shopcon_xh
+                            position absolute
+                            left 95px
+                            top 5px
+                            font-size 13px
+                            width 215px
+                            height 36px
+                            color #333333
+                            .one_shopcon_xh_s1:hover
+                                color red
+                                cursor:pointer
+                        .one_shopcon_ys
+                            position absolute
+                            width 130px
+                            height 20px
+                            top 5px
+                            color #666666
+                            left 330px
+                            cursor: default
+
+                        .one_shopcon_nc
+                            position absolute
+                            width 130px
+                            height 20px
+                            top 23px
+                            color #666666
+                            left 330px
+                            cursor: default
+                        .one_shopcon_jg
+                            position absolute
+                            width 130px
+                            height 20px
+                            top 10px
+                            color #666666
+                            left 545px
+                            cursor pointer
+
+                        .one_shopcon_js
+                            position absolute
+                            top -5px
+                            left 610px
+                            cursor pointer
+                            .box ul,li
+                                list-style none
+                                li
+                                    float left
+                                input
+                                    text-align center
+                        .one_shopcon_xj
+                            position absolute
+                            width 100px
+                            height 20px
+                            top 10px
+                            font-weight bold
+                            color #333333
+                            left 750px
+                        .one_shopcon_remove
+                            position absolute
+                            width 75px
+                            height 20px
+                            left 885px
+                            top 5px
+                            color #666666
+                            cursor pointer
 
 
 
+
+                        .one_shopcon_follow
+                            position absolute
+                            width 75px
+                            height 20px
+                            left 885px
+                            top 25px
+                            color #666666
+                            cursor pointer
 </style>
