@@ -190,15 +190,7 @@
 
                              <div class="box-lh-one">
                                  <ul>
-                                     <li><img src="img/59ded62eN64a9784c.jpg" /></li>
-                                     <li><img src="img/59ded626Ne3c69b70.jpg" /></li>
-                                     <li><img src="img/59ded626N7c4cb0a3.jpg" /></li>
-                                     <li><img src="img/59ded626Ne3c69b70.jpg" /></li>
-                                     <li><img src="img/59ded62dN7e28abc5 (1).jpg" /></li>
-                                     <li><img src="img/59ded62cN6e9ac17c.jpg" /></li>
-                                     <li><img src="img/59ded620Nfc0ab489.jpg" /></li>
-                                     <li><img src="img/59ded60eN3110f3a8.jpg" /></li>
-                                     <li><img src="img/59ded62dNfed003a8.jpg" /></li>
+                                     <li><img v-for="img in item.skuImageList" :src="img.imgUrl"  class="box-lh-one_img"/></li>
                                  </ul>
                              </div>
                              <div id="left">
@@ -229,11 +221,11 @@
                      </div>
                      <div class="box-two">
                          <div class="box-name">
-                             华为 HUAWEI Mate 10 6GB+128GB 亮黑色 移动联通电信4G手机 双卡双待
+                             {{item.skuDesc}}
                          </div>
-                         <div class="box-hide">预订用户预计11月30日左右陆续发货！麒麟970芯片！AI智能拍照！
+                         <!--<div class="box-hide">预订用户预计11月30日左右陆续发货！麒麟970芯片！AI智能拍照！
                              <a href=""><u>华为 HUAWEI Mate 10 Pro 10:08 限时限量抢！</u></a>
-                         </div>
+                         </div>-->
                          <div class="box-yuyue">
                              <div class="yuyue-one">
                                  <img src="img/7270ffc3baecdd448958f9f5e69cf60f.png" alt="" /> 预约抢购
@@ -258,7 +250,7 @@
                                  <li>京东价</li>
                                  <li>
                                      <span>￥</span>
-                                     <span>4499.00</span>
+                                     <span>{{item.price}}</span>
                                  </li>
                                  <li>
                                      预约享资格
@@ -286,13 +278,13 @@
                                  <li>配送至</li>
                                  <li class="box-stock-li">
                                      <div class="box-stock-one">
-                                         北京朝阳区管庄
+
                                          <img src="img/4a79b87a68623d4e8a73aff3e25fa99b.png" alt="" class="img" />
                                      </div>
                                      <div class="box-stock-two">
                                          <dl>
                                              <dt>
-                                                 <a>选择新地址</a>
+                                                 <a></a>
                                                  <img src="img/4a79b87a68623d4e8a73aff3e25fa99b.png" alt="" class="box-stock-two-img"/>
                                              </dt>
                                              <dd>
@@ -349,54 +341,15 @@
                              </ul>
                          </div>
                          <div class="box-attr-3">
-                             <div class="box-attr clear">
+                             <div class="box-attr clear" v-for="items in item.productSaleAttrList">
                                  <dl>
-                                     <dt>选择颜色</dt>
-                                     <dd>
-                                         <a href="#">
-                                             <img src="img/59ddfcb1Nc3edb8f1.jpg" /> 摩卡金
-                                         </a>
-                                     </dd>
-                                     <dd>
-                                         <a href="#">
-                                             <img src="img/59ded62eN64a9784c.jpg" /> 亮黑色
-                                         </a>
-                                     </dd>
-                                     <dd>
-                                         <a href="#">
-                                             <img src="img/59ddfcb1Nc3edb8f1.jpg" /> 香槟金
-                                         </a>
-                                     </dd>
-                                     <dd>
-                                         <a href="#">
-                                             <img src="img/59ded682N99d4efcc.jpg" /> 樱粉金
-                                         </a>
-                                     </dd>
-                                 </dl>
-                             </div>
-                             <div class="box-attr-2 clear">
-                                 <dl>
-                                     <dt>选择版本</dt>
-                                     <dd>
-                                         <a href="#">标准版</a>
-                                     </dd>
-                                     <dd>
-                                         <a href="#">套装版</a>
+                                     <dt>{{items.saleAttrName}} </dt>
+                                     <dd class="zz"  v-for="types in items.spuSaleAttrValueList">
+                                         <div :value="types.id" :class="{jj:types.isChecked==1?true:false}"><span class="s1">{{types.saleAttrValueName}}</span></div>
                                      </dd>
                                  </dl>
                              </div>
 
-                             <div class="box-attr-2 clear">
-                                 <dl>
-                                     <dt>选择内存</dt>
-                                     <dd>
-                                         <a href="#">64GB</a>
-                                     </dd>
-                                     <dd>
-                                         <a href="#">128GB</a>
-                                     </dd>
-                                 </dl>
-                             </div>
                          </div>
 
                          <div class="box-btns clear">
@@ -1528,15 +1481,58 @@
 
 <script>
     import header_head from "../components/common/header_head1";
+    import {request} from "../network/request";
     export default {
         name: "AddToCart",
+        data(){
+            return{
+                item: ''
+            }
+
+        },
         components:{
             header_head
+        },
+
+    created() {
+        request({
+            url:'103.html'
+        }).then(res =>{
+            this.item = res
+        })
+    },
+        methods:{
+            select(){
+
+            }
         }
     }
 </script>
 
 <style scoped>
+
+
+    .jj{
+
+        border: 1px solid red;
+        height: 44px;
+    }
+
+    .zz{
+
+        border: 1px solid #F0F0F0;
+        height: 44px;
+    }
+    .s1{
+        padding: 5px 5px 5px 5px;
+    }
+
+    .box-lh-one_img{
+        margin-left: 11px;
+        width:57px;
+        height: 57px;
+        border: 1px solid red;
+    }
     * {
         margin: 0;
         padding: 0;
@@ -5249,18 +5245,17 @@
     .box .box-two .box-attr dt {
         padding-left: 10px;
         font-family: simsun;
-        color: #999;
         line-height: 34px; }
     .box .box-two .box-attr dd {
-        border: solid 1px #CCCCCC;
+
         background: #F7F7F7;
-        color: #999;
         margin-bottom: 4px;
         margin-left: 5px; }
     .box .box-two .box-attr dd img {
         vertical-align: -12px; }
     .box .box-two .box-attr dd:nth-child(3) {
-        border: solid 1px red; }
+
+    }
     .box .box-two .box-attr-2 {
         margin-bottom: 5px; }
     .box .box-two .box-attr-2 dt,
@@ -5269,7 +5264,6 @@
     .box .box-two .box-attr-2 dt {
         padding-left: 10px;
         font-family: simsun;
-        color: #999;
         line-height: 34px; }
     .box .box-two .box-attr-2 dd {
         border: solid 1px #CCCCCC;
@@ -5277,8 +5271,6 @@
         line-height: 34px;
         padding: 0 13px;
         white-space: nowrap; }
-    .box .box-two .box-attr-2 dd.redborder{
-        border: solid 1px red; }
     .box .box-two .box-attr-3 {
         border: #CCCCCC 1px dashed;
         border-left: none;

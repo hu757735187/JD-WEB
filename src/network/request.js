@@ -4,7 +4,8 @@ export function request(config) {
     /*1.创建axios的实例*/
     const instance  = axios.create({
        baseURL: 'http://127.0.0.1:8080',
-        timeout: 5000
+        timeout: 5000,
+        method:"post"
     })
    //2.asios的拦截器
     //asios.interceptors 拦截全局的

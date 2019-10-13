@@ -1,7 +1,7 @@
 <template>
       <div class="test">
           <button @click="test">测试</button>
-          <h2>{{hhh}}</h2>
+          <h2>{{hhh.id}}</h2>
       </div>
 </template>
 
@@ -18,13 +18,16 @@ export default {
         methods:{
             test(){
                 request({
-                    url:'user'
+                    url:'102.html'
                 }).then(res =>{
                     this.hhh = res
-                    console.log('hhh');
+                    console.log(this.hhh);
                 })
             }
-        }
+        },
+    created() {
+        console.log("uuu");
+    }
     }
 
 </script>

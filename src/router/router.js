@@ -9,6 +9,7 @@ import AddToCart from "../views/AddToCart";
 import ShoppingCart from "../views/pages/ShoppingCart";
 import SettlementPage from "../views/SettlementPage";
 import cc_nav from "../components/common/cc_nav";
+import test from "../views/test";
 Vue.use(Router);
 
 export default new Router({
@@ -54,6 +55,10 @@ export default new Router({
     {
       path:'/cc_nav',
       component: cc_nav
+    },
+    {
+      path:'/test',
+      component:test
     },
     {
       path: "**",
